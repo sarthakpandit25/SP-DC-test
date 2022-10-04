@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="e201d06f-2647-4127-bd6a-b88287fe4421" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<flow name="sptestFlow" doc:id="69e54e8d-cf2a-4e72-a54b-4b45b57f4c04" >
+		<http:listener doc:name="Listener" doc:id="4a16365a-0a9c-4cc0-b6f7-6042e880c510" config-ref="HTTP_Listener_config" path="/sptest"/>
+		<logger level="INFO" doc:name="Logger" doc:id="f9c116ce-c6ba-4e36-a126-3ee7cc304c24" message="Test Application"/>
+	</flow>
+</mule>
